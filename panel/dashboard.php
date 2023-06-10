@@ -46,7 +46,7 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
                 </div>
                 <div class="todolist-content-body">
                     <?php foreach ($result as $key => $r) : ?>
-                        <div class="card">
+                        <form class="card">
                             <div class="card-head">
                                 <p><?php echo $r["title"] ?></p>
                                 <i class="fa fa-heart-o fa-2x " aria-hidden="true"></i>
@@ -56,11 +56,15 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
                             </div>
                             <div class="card-footer">
                                 <div>
-                                    <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+
+                                    <a href="../php/delete.php?id=<?php echo $r['id'] ?> ">
+                                        <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
+                                    </a>
+
                                 </div>
 
                             </div>
-                        </div>
+                        </form>
                     <?php endforeach ?>
                 </div>
             </div>

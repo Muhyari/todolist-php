@@ -235,6 +235,12 @@ a:hover {
 	align-items: center;
 }
 
+.todolist-content-body .card .card-footer button {
+	background: none;
+	outline: none;
+	border: none;
+}
+
 i {
 	cursor: pointer;
 }
