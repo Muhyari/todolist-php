@@ -247,10 +247,9 @@ i {
 
 .delete {
 	color: black;
-
 }
 
-.delete:hover{
+.delete:hover {
 	opacity: 0.7;
 }
 
@@ -274,5 +273,29 @@ i {
 		-moz-transform: translateY(-100%);
 		-ms-transform: translateY(-100%);
 		-o-transform: translateY(-100%);
+	}
 }
+
+.on-open-first {
+	animation: show 1s ease-in-out forwards;
+	-webkit-animation: show 1s ease-in-out forwards;
+}
+
+@keyframes show {
+	from {
+		transform: translateY(100%);
+		-webkit-transform: translateY(100%);
+		-moz-transform: translateY(100%);
+		-ms-transform: translateY(100%);
+		-o-transform: translateY(100%);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		-webkit-transform: translateY(0);
+		-moz-transform: translateY(0);
+		-ms-transform: translateY(0);
+		-o-transform: translateY(0);
+		opacity: 1;
+	}
 }
