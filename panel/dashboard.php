@@ -57,7 +57,7 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
                             <div class="card-footer">
                                 <div>
 
-                                    <a href="../php/delete.php?id=<?php echo $r['id'] ?> ">
+                                    <a class="delete" href="../php/delete.php?id=<?php echo $r['id'] ?>" >
                                         <i class="fa fa-trash fa-2x" aria-hidden="true"></i>
                                     </a>
 
@@ -73,6 +73,15 @@ $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
 
 </body>
 <script>
+    const cards = document.querySelectorAll(".card")
+    const deleteAnimation = document.querySelectorAll(".delete")
+    deleteAnimation.forEach((but, index) => but.addEventListener('click', () => {
+        cards[index].classList.add("delete-animation")
+        cards[index].addEventListener('animationend', () => {
+            cards[index].remove()
+        })
+    }))
+
     let count = 0
 
     function buttonSidebar() {
